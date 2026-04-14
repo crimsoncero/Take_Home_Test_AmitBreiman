@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private PlayerInventory _inventory;
+    [SerializeField] private PlayerEquipment _equipment;
     [FormerlySerializedAs("baseStats")] [SerializeField] private PlayerStatsSO statsSO;
     public PlayerStats ModifiedStats { get; private set; }
     public int CurrentHealth { get; private set; }
@@ -17,14 +18,17 @@ public class PlayerController : MonoBehaviour
     {
         ModifiedStats = statsSO.BaseStats;
         CurrentHealth = ModifiedStats.MaxHealth;
-        _inventory.OnItemEquipped += s => ModifyStats(s.Equip());
-        _inventory.OnItemUnequipped += s => ModifyStats(s.Unequip());
+        
+        _equipment.OnItemEquipped += equipment => ModifyStats(equipment.Equip());
+        _equipment.OnItemUnequipped += equipment => ModifyStats(equipment.Unequip());
     }
 
     public void MovePlayer(InputAction.CallbackContext context)
     {
         Vector2 moveVector = context.ReadValue<Vector2>();
-        _rb.linearVelocity = moveVector * ModifiedStats.MovementSpeed;
+        
+        int moveSpeed = Math.Max(0, ModifiedStats.MovementSpeed);
+        _rb.linearVelocity = moveVector * moveSpeed;
     }
     
     private void ModifyStats(PlayerStats statModifiers)

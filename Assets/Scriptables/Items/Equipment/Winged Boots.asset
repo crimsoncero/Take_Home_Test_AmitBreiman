@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948b90f50dadef649bfb67824c67c1bf, type: 3}
+  m_Name: Winged Boots
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Winged Boots
+  <Icon>k__BackingField: {fileID: 21300000, guid: 80a2a0d76c01997428d4213411145e8c, type: 3}
+  <Description>k__BackingField: Boots with wings
+  <Price>k__BackingField: 100
+  <StatModifiers>k__BackingField:
+    MaxHealth: 0
+    Strength: 0
+    Agility: 3
+    Intellect: 2
+    MovementSpeed: 5
+  <Slot>k__BackingField: 2
