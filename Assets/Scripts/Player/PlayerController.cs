@@ -8,12 +8,13 @@ public class PlayerController : MonoBehaviour
     public Action OnStatsChanged;
     
     [SerializeField] private Rigidbody2D _rb;
-    [SerializeField] private PlayerInventory _inventory;
+    [SerializeField] public PlayerInventory _inventory;
     [SerializeField] private PlayerEquipment _equipment;
     [FormerlySerializedAs("baseStats")] [SerializeField] private PlayerStatsSO statsSO;
     public PlayerStats ModifiedStats { get; private set; }
     public int CurrentHealth { get; private set; }
-
+    public PlayerInventory Inventory => _inventory;
+    public PlayerEquipment Equipment => _equipment;
     private void Start()
     {
         ModifiedStats = statsSO.BaseStats;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerEquipment : MonoBehaviour
 {
-    public Action<Equipment> OnItemEquipped;
-    public Action<Equipment> OnItemUnequipped;
+    public Action<IEquipable> OnItemEquipped;
+    public Action<IEquipable> OnItemUnequipped;
     
     public List<PlayerEquipSlot> EquipSlots = new List<PlayerEquipSlot>();
 
